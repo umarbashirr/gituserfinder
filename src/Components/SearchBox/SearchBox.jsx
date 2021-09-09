@@ -6,13 +6,18 @@ import { FormContainer, FormInput, FormButton } from './SearchBox.element';
 function SearchBox({ setClick, setData, username, setUsername }) {
   const formSubmitHandler = async (e) => {
     e.preventDefault();
-    const profile = await fetch(`https://api.github.com/users/${username}`);
-    const profileJson = await profile.json();
-    console.log(profileJson);
-    if (profileJson) {
-      setData(profileJson);
+    if (username === '') {
+      alert('Please Enter UserName First');
+      setClick(false);
+    } else {
+      const profile = await fetch(`https://api.github.com/users/${username}`);
+      const profileJson = await profile.json();
+      console.log(profileJson);
+      if (profileJson) {
+        setData(profileJson);
+      }
+      setClick(true);
     }
-    setClick(true);
   };
 
   return (
