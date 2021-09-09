@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  FaBlog,
-  FaFacebook,
-  FaLink,
-  FaMapMarker,
-  FaMarker,
-  FaTwitter,
-} from 'react-icons/fa';
+import { FaBlog, FaLink, FaMapMarker, FaTwitter } from 'react-icons/fa';
 import { IconContext } from 'react-icons/lib';
 import {
   Card,
